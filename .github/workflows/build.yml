@@ -23,7 +23,7 @@ jobs:
           arguments: build
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: falchionpatch-jar
           path: build/libs/*.jar
