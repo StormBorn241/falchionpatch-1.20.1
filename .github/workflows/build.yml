@@ -1,0 +1,29 @@
+name: Build Falchion Patch
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Run Gradle build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: falchionpatch-jar
+          path: build/libs/*.jar

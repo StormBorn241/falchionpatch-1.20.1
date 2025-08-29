@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+issueTrackerURL=""
+[[mods]]
+modId="falchionpatch"
+version="${file.jarVersion}"
+displayName="Falchion MoveSet Patch (EpicFight 20.12.5)"
+authors="Nameless (port by patch)"
+description='''
+Parches el moveset de Falchion para EpicFight 20.12.5 (MC 1.20.1), registrando animaciones por la nueva API.
+'''
+[[dependencies.falchionpatch]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+
+[[dependencies.falchionpatch]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+
+[[dependencies.falchionpatch]]
+modId="epicfight"
+mandatory=true
+versionRange="[20.12.5,21.0.0)"
+ordering="AFTER"
+side="BOTH"
